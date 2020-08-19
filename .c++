@@ -1,32 +1,39 @@
-# Prerequisites
-*.d
+// ceaser shift
+#include <iostream>
+using namespace std;
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+int main()
+{
+    string  dash = "--------";
+    // Declaring and initializing variables
+    int NUMBER_OF_SHIFT = 0;
+    char CHARACTERS[5] ;
+    string RECIEVE_LETTERS ;
+    string TO_DISPLAY_LETTERS = "";
 
-# Precompiled Headers
-*.gch
-*.pch
+    cout<< dash<< " CAESAR CIPHER SHIFT "<<dash<<"\n"<<endl;
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+    // Accept a number to indicate the amount of shift. 
+    while (NUMBER_OF_SHIFT == 0)
+    {
 
-# Fortran module files
-*.mod
-*.smod
+        cout << "Enter NUMBER of shift: ";
+        cin >> NUMBER_OF_SHIFT;
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+    }
+    // Accept 5 letters. (Plain text)
+    cout << "Enter 5 LETTERS to Encrypt: ";
+    cin >> RECIEVE_LETTERS;    
+    
+    for (int i = 0; i < RECIEVE_LETTERS.length(); i++)
+    {
+        CHARACTERS[i] = RECIEVE_LETTERS[i];
+    }
 
-# Executables
-*.exe
-*.out
-*.app
+    for (int i = 0; i < 5; i++)
+    {
+       TO_DISPLAY_LETTERS +=  CHARACTERS[i] + NUMBER_OF_SHIFT;
+    }
+    // Displaying the recieved and encrypted letters
+    cout<< "\nPLAIN TEXT:\t"<<RECIEVE_LETTERS<<"\nCIPHER TEXT:\t"<<TO_DISPLAY_LETTERS<<endl;
+}
